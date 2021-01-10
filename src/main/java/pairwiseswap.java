@@ -38,6 +38,7 @@ public class pairwiseswap {
         list.printList(head);
         list.printList(list.pairSwap(head));
     }
+//todo revise
 //assume that before the curr node all nodes are reversed pair wise and the prev node is yet to be ref
     public static Node pairSwap(Node head){
         if(head==null || head.next==null)

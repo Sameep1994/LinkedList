@@ -30,6 +30,7 @@ public class CloneLL {
 
         // This function clones a given
 // linked list in O(1) space
+//todo revise
         static Node clone(Node start)
         {
             Node curr = start, temp = null;
@@ -111,6 +112,7 @@ public class CloneLL {
 
         }
     }
+
 
 
 }

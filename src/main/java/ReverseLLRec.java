@@ -46,7 +46,7 @@ public class ReverseLLRec {
         Node curr = ll1.head;
         ll1.printList(ll1.recRev2(curr,prev));
     }
-//we are calling reverse fun recursively for all the nodes after head
+//we are calling reverse fun recursively for all the nodes after head,reverse the ll after the current node
 //we are using a pointer tail which is taking care of last revrsal
     public static Node recRev1(Node head){
         if(head==null || head.next == null)

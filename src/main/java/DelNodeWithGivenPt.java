@@ -52,6 +52,5 @@ public class DelNodeWithGivenPt {
         Node temp = pt.next;
         pt.data = temp.data;
         pt.next= temp.next;
-        temp=null;
     }
 }

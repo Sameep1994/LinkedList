@@ -70,7 +70,7 @@ public class RemoveLoopLL {
             slow = slow.next;
             fast = fast.next;
         }
-        //since fast is looping till the last point
+        //we compare slow.next and fast.next because we want to track the previous node and change that to null
         fast.next=null;
     }
 

@@ -30,7 +30,6 @@ public class CloneLL {
 
         // This function clones a given
 // linked list in O(1) space
-//todo revise
         static Node clone(Node start)
         {
             Node curr = start, temp = null;
@@ -81,6 +80,45 @@ public class CloneLL {
             return temp;
         }
 
+        public static Node copy(Node head){
+            //create a copy of node next to the current nodes
+            Node ptr=head;
+            while (ptr!=null){
+                Node cloneNode = new Node(ptr.data);
+
+                cloneNode.next=ptr.next;
+                ptr.next=cloneNode;
+                ptr=cloneNode.next;
+            }
+
+            ptr=head;
+            //copy the random values
+            while (ptr!=null){
+               if(ptr.random!=null){
+                   ptr.next.random=ptr.random.next;
+               }else {
+                   ptr.next.random=null;
+               }
+
+                ptr=ptr.next.next;
+            }
+
+            //untangle new and old
+            Node old_list = head;
+            Node new_list = head.next;
+            Node res = new_list;
+            while (old_list!=null){
+            old_list.next=old_list.next.next;
+            new_list.next=(new_list.next !=null)?new_list.next.next:null;
+
+            old_list=old_list.next;
+            new_list=new_list.next;
+            }
+
+            return res;
+        }
+
+
         // Driver code
         public static void main(String[] args)
         {
@@ -110,6 +148,8 @@ public class CloneLL {
             Node cloned_list = clone(start);
             print(cloned_list);
 
+            System.out.println("------------------");
+            print(copy(start));
         }
     }
 
